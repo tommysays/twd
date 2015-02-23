@@ -4,6 +4,7 @@ using System.Collections;
 public class Vida : MonoBehaviour {
 	public int curHP = 1, maxHP = 1;
 	public int damage = 1;
+	public float speed;
 	public Owner owner;
 	public enum Owner{
 		FRIENDLY, ENEMY, NEUTRAL
@@ -14,24 +15,17 @@ public class Vida : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Boundary" || other.tag == "Tower")
 			return;
-		print ("cur = " + tag + ", other = " + other.tag);
 		GameObject curObj = GetComponent<Collider>().gameObject;
 		GameObject otherObj = other.gameObject;
 		Vida otherVida = otherObj.GetComponent<Vida>();
-		/*
-		if (otherVida == null){
-			print ("null other");
-			print (otherObj.tag);
+		if (otherVida == null || owner == otherVida.owner){
 			return;
 		}
-		*/
-		if (owner == otherVida.owner){
-			print ("same owner");
-			return;
-		}
-		print ("damaging things");
 		bool otherDestroyed = DamageObject(otherObj, damage);
 		bool thisDestroyed = DamageObject(curObj, otherVida.damage);
+		if (otherDestroyed && thisDestroyed){
+			// this is here to remove warnings lol. I'll use them for real later.
+		}
 		/* 
 		 * Code for spawning explosions.
 		if (otherDestroyed && other.tag == "Enemy"){

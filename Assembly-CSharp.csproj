@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Gunnery.cs" />
-     <Compile Include="Assets\InRadiusDetection.cs" />
      <Compile Include="Assets\Scripts\BasicMover.cs" />
-     <Compile Include="Assets\TargetedMover.cs" />
-     <Compile Include="Assets\Vida.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Gunnery.cs" />
+     <Compile Include="Assets\Scripts\InRadiusDetection.cs" />
+     <Compile Include="Assets\Scripts\TargetedMover.cs" />
+     <Compile Include="Assets\Scripts\Vida.cs" />
+     <Compile Include="Assets\Scripts\WaypointMover.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
